@@ -1,10 +1,5 @@
 ---  @meta
 
---[[
-THIS IS A META FILE FOR CS2D COMPLETIONS,
-DON'T `dofile` THIS FILE!
-]]
-
 --- @alias addhook_hook
 ---| '"always"'
 ---| '"assist"'
@@ -191,8 +186,76 @@ function addbind(key) end
 ---| '"rcon"'
 ---| '"language"'
 ---| '"language_iso"'
+---| '"team"'
+---| '"favteam"'
+---| '"look"'
+---| '"sprayname"'
+---| '"spraycolor"'
+---| '"mousex"'
+---| '"mousey"'
+---| '"mousemapx"'
+---| '"mousemapy"'
+---| '"screenw"'
+---| '"screenh"'
+---| '"widescreen"'
+---| '"windowed"'
+---| '"micsupport"'
+---| '"x"'
+---| '"y"'
+---| '"tilex"'
+---| '"tiley"'
+---| '"rot"'
+---| '"health"'
+---| '"maxhealth"'
+---| '"armor"'
+---| '"money"'
+---| '"score"'
+---| '"deaths"'
+---| '"teamkills"'
+---| '"hostagekills"'
+---| '"mvp"'
+---| '"assists"'
+---| '"ping"'
+---| '"idle"'
+---| '"speedmod"'
+---| '"spectating"'
+---| '"ai_flash"'
+---| '"weapontype"'
+---| '"weaponmode"'
+---| '"nightvision"'
+---| '"defusekit"'
+---| '"gasmask"'
+---| '"bomb"'
+---| '"flag"'
+---| '"reloading"'
+---| '"process"'
+---| '"votekick"'
+---| '"votemap"'
+---| '"table"'
+---| '"tableliving"'
+---| '"team1"'
+---| '"team2"'
+---| '"team1living"'
+---| '"team2living"'
 
+--[[
+Returns a value of a player or a table of players. Returns false if the specified player, value or table does not exist.
+<s>
+]]
 ---@param id number
 ---@param value player_value
----@return boolean|string|number
+---@return boolean|string|number|table
 function player(id,value) end
+
+--[[
+Sends "text" as server message to all players.
+]]
+---@param text string
+function msg(text) end
+
+--[[
+Sends "text" to a certain player (id) only.
+]]
+---@param id number
+---@param text string
+function msg2(id,text) end
