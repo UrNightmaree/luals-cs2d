@@ -1,6 +1,6 @@
----  @meta
+---@meta
 
---- @alias addhook_hook
+---@alias addhook_hook
 ---| '"always"'
 ---| '"assist"'
 ---| '"attack"'
@@ -92,7 +92,7 @@ Priority is only relevant if there is more than one function attached to the sam
 function addhook(hook,func,prio) end
 
 
---- @alias addbind_key
+---@alias addbind_key
 ---| '"0"'
 ---| '"1"'
 ---| '"2"'
@@ -247,11 +247,13 @@ Returns a value of a player or a table of players. Returns false if the specifie
 ---@return boolean|string|number|table
 function player(id,value) end
 
+
 --[[
 Sends "text" as server message to all players.
 ]]
 ---@param text string
 function msg(text) end
+
 
 --[[
 Sends "text" to a certain player (id) only.
@@ -259,3 +261,58 @@ Sends "text" to a certain player (id) only.
 ---@param id number
 ---@param text string
 function msg2(id,text) end
+
+
+--[[
+Returns the SHA256 checksum of the file at this path.
+]]
+---@param path string
+---@return string
+function checksumfile(path) end
+
+
+--[[
+Returns the SHA256 checksum of the given string.
+]]
+---@param str string
+---@return string
+function checksumstring(str) end
+
+
+--[[
+Returns the tile x and y position of the closest living and unused hostage to a given player. Returns -100,-100 if no hostage has been found.
+]]
+---@param id number
+---@return x number
+---@return y number
+function closehostage(id) end
+
+
+--[[
+Returns a Lua table with all IDs of items which are close to the player specified with the id parameter. Only dropped items which are within the range will be returned.
+]]
+---@param id number
+---@param range number
+---@return table
+function closeitems(id,range) end
+
+
+--[[
+Returns a list of objects which are within the specified radius (in pixels) around the specified position (X|Y) in pixels.
+]]
+---@param x number
+---@param y number
+---@param radius number
+---@param type? number
+---@return table
+function closeobjects(x,y,radius,type) end
+
+
+--[[
+Returns a list of all alive players (IDs) which are within the specified radius (in pixels) around the specified position (x|y) in pixels.
+]]
+---@param x number
+---@param y number
+---@param radius number
+---@param team? number
+function closeplayer(x,y,radius,team) end
