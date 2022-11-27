@@ -283,8 +283,8 @@ function checksumstring(str) end
 Returns the tile x and y position of the closest living and unused hostage to a given player. Returns -100,-100 if no hostage has been found.
 ]]
 ---@param id number
----@return x number
----@return y number
+---@return number x
+---@return number y
 function closehostage(id) end
 
 
