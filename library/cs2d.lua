@@ -301,4 +301,78 @@ function closeplayer(x,y,radius,team) end
 ---@param x integer
 ---@param y integer
 ---@param value entity_value
+---@return integer|boolean|string
 function entity(x,y,value) end
+
+---@param type integer
+---@return table
+function entitylist(type) end
+
+---@param id integer
+---@param x number
+---@param y number
+---@return integer
+function fow_in(id,x,y) end
+
+---@param hook addhook_hook
+---@param func string
+function freehook(hook,func) end
+
+---@param id integer
+function freeimage(id) end
+
+---@param func? string
+---@param param? string
+function freetimer(func,param) end
+
+---@return nil
+function funcs() end
+
+---@alias game_value
+---| '"version"'
+---| '"dedicated"'
+---| '"phase"'
+---| '"round"'
+---| '"timeleft"'
+---| '"maptimeleft"'
+---| '"score_t"'
+---| '"score_ct"'
+---| '"winrow_t"'
+---| '"winrow_ct"'
+---| '"nextmap"'
+---| '"ticks"'
+---| '"port"'
+---| '"bombplanted"'
+---| '"sysfolder"'
+
+---@param value game_value
+---@return number|boolean|string
+function game(value) end
+
+---@alias team
+---| 0 # all
+---| 1 # T
+---| 2 # CT
+
+---@param x number
+---@param y number
+---@param radius number
+---@param team team
+function hascloseplayers(x,y,radius,team) end
+
+---@alias hostage_value
+---| '"exists"'
+---| '"health"'
+---| '"follow"'
+---| '"used"'
+---| '"look"'
+---| '"x"'
+---| '"y"'
+---| '"rot"'
+---| '"tilex"'
+---| '"tiley"'
+---| '"table"'
+
+---@param id integer
+---@param value hostage_value
+function hostage(id,value) end
