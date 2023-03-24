@@ -81,16 +81,10 @@
 ---| '"vote"'
 ---| '"walkover"'
 
---[[
-Attaches the Lua function "func" to the hook "hook". CS2D will always call that Lua function when the event related to that hook occurs.
-Priority is only relevant if there is more than one function attached to the same hook.
-<s>
-]]
 ---@param hook addhook_hook
 ---@param func string
----@param prio? number
+---@param prio? integer
 function addhook(hook,func,prio) end
-
 
 ---@alias addbind_key
 ---| '"0"'
@@ -163,15 +157,9 @@ function addhook(hook,func,prio) end
 ---| '"ins"'
 ---| '"del"'
 
---[[
-Adds a Lua key bind for the specified key. This bind will be active for all players and will trigger the key-hook when a player presses or releases the related key.
-Returns 1 if adding the key bind worked, 0 otherwise (invalid key name/already bound).
-<s>
-]]
 ---@param key addbind_key
----@return number
+---@return integer
 function addbind(key) end
-
 
 ---@alias player_value
 ---| '"exists"'
@@ -238,81 +226,79 @@ function addbind(key) end
 ---| '"team1living"'
 ---| '"team2living"'
 
---[[
-Returns a value of a player or a table of players. Returns false if the specified player, value or table does not exist.
-<s>
-]]
----@param id number
+---@param id integer
 ---@param value player_value
 ---@return boolean|string|number|table
 function player(id,value) end
 
-
---[[
-Sends "text" as server message to all players.
-]]
 ---@param text string
 function msg(text) end
 
-
---[[
-Sends "text" to a certain player (id) only.
-]]
----@param id number
+---@param id integer
 ---@param text string
 function msg2(id,text) end
 
-
---[[
-Returns the SHA256 checksum of the file at this path.
-]]
 ---@param path string
 ---@return string
 function checksumfile(path) end
 
-
---[[
-Returns the SHA256 checksum of the given string.
-]]
 ---@param str string
 ---@return string
 function checksumstring(str) end
 
-
---[[
-Returns the tile x and y position of the closest living and unused hostage to a given player. Returns -100,-100 if no hostage has been found.
-]]
----@param id number
----@return number x
----@return number y
+---@param id integer
+---@return integer x
+---@return integer y
 function closehostage(id) end
 
-
---[[
-Returns a Lua table with all IDs of items which are close to the player specified with the id parameter. Only dropped items which are within the range will be returned.
-]]
----@param id number
----@param range number
+---@param id integer
+---@param range integer
 ---@return table
 function closeitems(id,range) end
 
-
---[[
-Returns a list of objects which are within the specified radius (in pixels) around the specified position (X|Y) in pixels.
-]]
----@param x number
----@param y number
----@param radius number
----@param type? number
+---@param x integer
+---@param y integer
+---@param radius integer
+---@param type? integer
 ---@return table
 function closeobjects(x,y,radius,type) end
 
-
---[[
-Returns a list of all alive players (IDs) which are within the specified radius (in pixels) around the specified position (x|y) in pixels.
-]]
----@param x number
----@param y number
----@param radius number
----@param team? number
+---@param x integer
+---@param y integer
+---@param radius integer
+---@param team? integer
 function closeplayer(x,y,radius,team) end
+
+---@alias entity_value
+---| '"exists"'
+---| '"typename"'
+---| '"type"'
+---| '"name"'
+---| '"trigger"'
+---| '"state"'
+---| '"int0"'
+---| '"int1"'
+---| '"int2"'
+---| '"int3"'
+---| '"int4"'
+---| '"int5"'
+---| '"int6"'
+---| '"int7"'
+---| '"int8"'
+---| '"int9"'
+---| '"str0"'
+---| '"str1"'
+---| '"str2"'
+---| '"str3"'
+---| '"str4"'
+---| '"str5"'
+---| '"str6"'
+---| '"str7"'
+---| '"str8"'
+---| '"str9"'
+---| '"aistate"'
+
+---@param x integer
+---@param y integer
+---@param value entity_value
+function entity(x,y,value) end
